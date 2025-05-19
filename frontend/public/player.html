@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>France TV Player</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #player-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="player-container">
+        <script>
+            // Get the video URL from the query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoUrl = urlParams.get('url');
+            
+            if (videoUrl) {
+                // Create an iframe to display the video
+                const iframe = document.createElement('iframe');
+                iframe.src = videoUrl;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                document.getElementById('player-container').appendChild(iframe);
+            }
+        </script>
+    </div>
+</body>
+</html> 

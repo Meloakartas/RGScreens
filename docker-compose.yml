@@ -14,3 +14,21 @@ services:
     environment:
       - NODE_ENV=development
     restart: unless-stopped
+  
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: local.dockerfile
+    container_name: rgscreens_backend
+    ports:
+      - '5000:3000'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules # Exclude node_modules from volume
+    working_dir: /app
+    command: npm run start:dev
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
