@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 51 64% 98%;
+    /* Ecru white 300 */
+    --foreground: 209 84% 5%;
+    /* Green Vogue 900 */
+    --primary: 210, 39%, 56%;
+    /* Green Vogue 400 */
+    --primary-foreground: 60 33% 99%;
+    --secondary: 210 68% 22%;
+    --secondary-foreground: 60 33% 99%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --hard-green: 119 53% 48%;
+    --soft-green: 118 57% 74%;
+    --hard-red: 355 96% 64%;
+    --soft-red: 355 86% 81%;
+    --gauge-color: 210 68% 36%;
+    --gauge-secondary-color: 210 67% 16%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 209 84% 5%;
+    /* Green Vogue 900 */
+    --foreground: 60 33% 99%;
+    /* Ecru White 100 */
+    --primary: 209 84% 10%;
+    /* Green Vogue 700 */
+    --primary-foreground: 60 33% 99%;
+    /* Ecru White 100 */
+    --secondary: 210 68% 22%;
+    /* Azure 700 */
+    --secondary-foreground: 60 33% 99%;
+    /* Ecru White 100 */
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --destructive: 355 100% 35%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --hard-green: 119 53% 48%;
+    --soft-green: 118 57% 74%;
+    --hard-red: 355 96% 64%;
+    --soft-red: 355 86% 81%;
+    --gauge-color: 210 68% 36%;
+    /* Azure 500 */
+    --gauge-secondary-color: 210 67% 16%;
+    /* Azure 800 */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,30 @@
+services:
+  nginx:
+    build:
+      context: ./frontend
+      dockerfile: nginx.prod.dockerfile
+    container_name: rgscreens_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot
+    depends_on:
+      - backend
+    networks:
+      - internal
+      - web
+
+networks:
+  internal:
+    driver: bridge
+  web:
+    driver: bridge
+
+volumes:
+  mongo_data:
+    driver: local
+  mongo_config:
+    driver: local 

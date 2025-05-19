@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: local.dockerfile
+    container_name: rgscreens_frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Exclude node_modules from volume
+    working_dir: /app
+    command: npm run dev -- --host 0.0.0.0
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
